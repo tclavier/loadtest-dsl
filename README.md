@@ -24,7 +24,7 @@ Options from the configuration file:
 
 ## When: ##
 
-- use a "jquery"-like syntax to design dom objects (i-e __$("h1").text() == "movie"__ or __$("div.clickable").size() > 0__ or __$(“#submit”).is(‘.disabled’))__
+- use a "jquery"-like syntax to design dom objects, i-e __$("h1").text() == "movie"__ or __$("div.clickable").size() > 0__ or __$(“#submit”).is(‘.disabled’)__
 - TODO: establish a list of all actions natively doable by tsung
 
 ### load test description: ###
@@ -44,9 +44,9 @@ This is where we express the results expected from the load/unit test
 - __the page should load in less than x second__ gets the html page only, doesn't follow any links
 - __the whole page should load in less than x second__ gets the page plus all the images, scripts etc
 - __the page should load in less than x second with 95 centile of less than ''__
-- __And the page should contain the word "devops"__
-- __And the page should match the regex "/[a]/"__
-- __And the page should contain a $(input[class=foo])__
+- __the page should contain the word "devops"__ we use this value for the match tag
+- __the page should match the regex "/[a]/"__ 
+- __the page should contain a $(input[class=foo])__
 - __md5sum for the page should be XXX__
 - __the content type should be ‘foo/bar’__
 - __I should have $(“#submit”).is(‘.enabled’) and not $(“#submit”).is(‘.disabled’)__

@@ -2,24 +2,27 @@
 <!DOCTYPE tsung SYSTEM "/usr/share/tsung/tsung-1.0.dtd">
 <tsung loglevel="warning" dumptraffic="protocol" version="1.0">
 <clients>
-    <client host="localhost" use_controller_vm="true" maxusers="30000" cpu="1" weight="1"/>
+    <client host="localhost" use_controller_vm="true" maxusers="30000" cpu="1" weight="1"/>
 </clients>
-  <servers>
-    <server host="devops.fr" port="80" type="tcp"/>
-  </servers>
-  <monitoring>
-    <monitor host="localhost" type="erlang"/>
-  </monitoring>
+  <servers>
+    <server host="devops.fr" port="80" type="tcp"/>
+  </servers>
+  <monitoring>
+    <monitor host="localhost" type="erlang"/>
+  </monitoring>
 <load>
-  <arrivalphase phase="1" duration="10" unit="minute">
-     <users arrivalrate="1" maxnumber="1" unit="second"/>
-   </arrivalphase>
+  <arrivalphase phase="1" duration="10" unit="minute">
+     <users arrivalrate="1" maxnumber="1" unit="second"/>
+   </arrivalphase>
 </load>
 <sessions>
-<session name='tsung1' probability='100'  type='ts_http'>
-<transaction name="01_root">
-<request><http url='http://devops.fr/' version='1.1' method='GET'></http></request>
-</transaction>
-</session>
+  <session name='tsung1' probability='100'  type='ts_http'>
+    <transaction name="01_root">
+      <request>
+        <match do="continue" when="match">devops</match>
+        <http url='http://devops.fr/' version='1.1' method='GET'></http>
+      </request>
+    </transaction>
+  </session>
 </sessions>
 </tsung>
