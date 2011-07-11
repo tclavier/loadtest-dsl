@@ -1,11 +1,8 @@
 # OverviewFeature: #
-Scenario:
-
-Given:
-
-When:
-
-Then:
+- __Scenario:__
+- __Given:__
+- __When:__
+- __Then:__
 
 # Content per phase #
 ## Given: ##
